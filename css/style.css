@@ -32,4 +32,5 @@ body {
 
 .offer_phrase {
   color: var(--grayish-blue);
+  font-size: 0.7rem;
 }
