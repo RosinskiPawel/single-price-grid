@@ -2,6 +2,7 @@
 
 *:root {
   --cyan: hsl(179, 62%, 43%);
+  --light-cyan: rgb(31, 194, 194);
   --bright-yellow: hsl(71, 73%, 54%);
   --light-gray: hsl(204, 43%, 93%);
   --grayish-blue: hsl(218, 22%, 67%);
@@ -22,15 +23,143 @@ body {
   font-family: 'Karla', sans-serif;
 }
 
+.container {
+  display: grid;
+  background-color: var(--light-gray);
+  min-height: 100vh;
+  place-content: center;
+}
+
+.container_card {
+  grid-template-columns: repeat(2, 31.5rem);
+  grid-template-rows: 21.5rem 1fr;
+  display: grid;
+  width: 64rem;
+  height: 48rem;
+}
+
+.offer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: white;
+  padding: 4rem 8rem 0rem 4rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.subscription {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: span;
+  background-color: var(--cyan);
+  border-bottom-left-radius: 1rem;
+}
+
+.whyUs {
+  grid-column-start: 2;
+  grid-row-start: 2;
+  grid-row-end: span;
+  background-color: var(--light-cyan);
+  border-bottom-right-radius: 1rem;
+}
 .offer_title {
   color: var(--cyan);
+  padding-bottom: 2.7rem;
+  font-size: 2.5rem;
 }
 
 .offer_undertitle {
   color: var(--bright-yellow);
+  font-size: 1.7rem;
+  padding-bottom: 2rem;
 }
 
 .offer_phrase {
   color: var(--grayish-blue);
-  font-size: 0.7rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+.whyUs,
+.subscription {
+  padding: 4rem;
+  color: var(--light-gray);
+}
+.subscription_title,
+.whyUs_title {
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
+  color: white;
+}
+span {
+  font-size: 3rem;
+  padding-right: 1rem;
+  color: white;
+}
+
+.subscription_price {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1.5rem;
+}
+.monthly {
+  margin-top: 1rem;
+}
+.button {
+  height: 5rem;
+  width: 24rem;
+  background-color: var(--bright-yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+}
+ul {
+  list-style: none;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+@media only screen and (max-width: 400px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 110vh;
+  }
+
+  .container_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 31rem;
+    height: 72rem;
+  }
+  .subscription {
+    border-radius: 0;
+    padding: 3.5rem 2.5rem;
+  }
+
+  .whyUs {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 3.5rem 2.5rem;
+  }
+  .offer {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .offer_title {
+    font-size: 2.3rem;
+    padding-top: 3.5rem;
+  }
+  .offer_phrase {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+  }
+  .button {
+    height: 5rem;
+    width: 26rem;
+  }
 }
